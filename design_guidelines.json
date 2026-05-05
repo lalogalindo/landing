@@ -1,0 +1,117 @@
+{
+  "theme": "DARK",
+  "archetype": "5 (Jewel & Luxury) + Tech Startup hybrid",
+  "mood": "Tech-forward, visually striking, modern, premium, cutting-edge AI",
+  "colors": {
+    "background": "Midnight Obsidian (#050510) and Dark Slate (#0A0B14)",
+    "primary": "Vibrant Cyan (#00E5FF)",
+    "secondary": "Deep Navy (#0A192F)",
+    "accent_red": "Merc Red (#FF3366)",
+    "accent_magenta": "Neon Magenta (#FF00FF)",
+    "accent_lime": "Electric Lime (#39FF14)",
+    "accent_orange": "Bright Orange (#FF6600)",
+    "text_primary": "Pure White (#FFFFFF)",
+    "text_secondary": "Tinted Grey (#8892B0)",
+    "border": "White/10 (#FFFFFF1A)"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Outfit, sans-serif",
+      "style": "tracking-tight, font-black or font-light for contrast"
+    },
+    "body": {
+      "font_family": "IBM Plex Sans, sans-serif",
+      "style": "tracking-normal, leading-relaxed"
+    },
+    "mono": {
+      "font_family": "JetBrains Mono, monospace",
+      "style": "tracking-widest, uppercase"
+    }
+  },
+  "layout": {
+    "spacing_scale": "Generous (p-8, p-12, p-24, p-32)",
+    "grid_strategy": "Bento 'Control Room' Grid for Services and Asymmetric 'Tetris' Grid for Process",
+    "surface_styles": {
+      "cards": "Crystal Glassmorphism (bg-white/5, backdrop-blur-xl, border-white/10, shadow-lg)",
+      "nav": "Floating Crystal Glass, z-50",
+      "footer": "Grid Borders, Dark Slate background"
+    }
+  },
+  "components": {
+    "buttons": "Glassmorphic with bright glowing neon borders on hover. Primary button uses vibrant cyan or magenta glow.",
+    "forms": "Shadcn based. Inputs with bg-white/5, backdrop blur, border-white/10, focus:ring-cyan-500.",
+    "badges": "JetBrains Mono, text-xs, glowing neon colors.",
+    "icons": "Phosphor Icons (@phosphor-icons/react)"
+  },
+  "sections": [
+    {
+      "name": "Hero",
+      "description": "Bold value proposition 'Creating solutions to customer problems', emphasizing cutting-edge technology including AI. Background uses 'hero_bg' abstract dark neon image with a heavy black/60 overlay to make text pop. Main CTA and secondary CTA.",
+      "layout": "Asymmetric text on left, glowing abstract visuals on right (or full bg). Fluid large typography (text-5xl to text-6xl+)."
+    },
+    {
+      "name": "Services Grid",
+      "description": "Bento grid showcasing E-commerce, Dashboards, Self-managed sites, Consulting, AI Solutions, Custom Software.",
+      "layout": "Bento Grid Mode B. Glassmorphic cards with vibrant glowing hover states (cyan, magenta, lime)."
+    },
+    {
+      "name": "Process",
+      "description": "Requirements Discovery -> Design -> Development -> Delivery. Highlight 'Requirements gathering is our primary focus'.",
+      "layout": "Vertical timeline or overlapping cards. Use monospace labels. Dark slate background."
+    },
+    {
+      "name": "Privacy Policy & Data Usage",
+      "description": "Legal section detailing data handling, scannable format.",
+      "layout": "Clean typography, accordion or simple text sections."
+    },
+    {
+      "name": "Contact",
+      "description": "Contact form connected to Resend (to lalogalindo@gmail.com). Phone: 2221401900. Includes Google reCAPTCHA v2.",
+      "layout": "Side-by-side: Contact info on left, form on right. Glassmorphic form fields."
+    },
+    {
+      "name": "Footer",
+      "description": "Simple footer. Copyright © 2025 MercSoft. No social links yet.",
+      "layout": "Centered or split layout with logo mark."
+    }
+  ],
+  "media": {
+    "images": [
+      {
+        "category": "logo",
+        "url": "https://customer-assets.emergentagent.com/job_2caf7472-358e-4951-9ad9-64b890599e8e/artifacts/yzfprxpq_bnm-02.jpg",
+        "description": "MercSoft Multi-color Swirl Logo"
+      },
+      {
+        "category": "hero_background",
+        "url": "https://images.unsplash.com/photo-1771875802948-0d0f3424fe6d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGRhcmslMjBuZW9uJTIwdGVjaHxlbnwwfHx8fDE3Nzc5NjAxNDd8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Abstract streaks of colorful neon lights against dark background. Use with heavy bg-black/60 overlay."
+      },
+      {
+        "category": "services_ai_background",
+        "url": "https://images.unsplash.com/photo-1771875797242-77f69f061132?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjBuZW9uJTIwdGVjaHxlbnwwfHx8fDE3Nzc5NjAxNDd8MA&ixlib=rb-4.1.0&q=85",
+        "description": "Streaks of purple and green lights for the AI Service bento card."
+      },
+      {
+        "category": "process_tech_image",
+        "url": "https://images.unsplash.com/photo-1773349807434-374473797148?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxzb2Z0d2FyZSUyMGRldmVsb3BlciUyMGNvZGluZyUyMGRhcmslMjBtb2RlfGVufDB8fHx8MTc3Nzk2MDE1MHww&ixlib=rb-4.1.0&q=85",
+        "description": "Computer monitor displaying code in a dark room."
+      }
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Use English for all text. The architecture should be parametrizable for Spanish later, but output the MVP in English.",
+    "Do NOT create an About Us section.",
+    "Use pure HTML + Tailwind for structural layouts in marketing sections. Use Shadcn exclusively for interactive components like the Contact Form inputs/buttons.",
+    "Ensure 'Outfit' font is used for Headings and 'IBM Plex Sans' for Body text. Use 'JetBrains Mono' for small tech labels.",
+    "Integrate Phosphor Icons (@phosphor-icons/react).",
+    "Add 'data-testid' to all interactive elements (buttons, inputs, forms).",
+    "Contact form must send email to 'lalogalindo@gmail.com' via Resend and include reCAPTCHA v2.",
+    "Use a deep dark background (#050510) and apply the brand colors (Cyan, Magenta, Lime, Orange, Red) as subtle gradients, glowing borders, or text-clip effects.",
+    "All containers/cards must have generous padding (p-6, p-8) and subtle white/10 borders to simulate crystal glassmorphism.",
+    "Hero overlay must be max bg-black/60 to let the background abstract image shine through.",
+    "In the Process section, make sure to strongly highlight that 'requirements gathering is our primary focus'.",
+    "Do not include social media links in the footer, only copyright and phone number (2221401900).",
+    "Remember to include Privacy Policy and Data Usage section as a scannable legal section."
+  ]
+}
