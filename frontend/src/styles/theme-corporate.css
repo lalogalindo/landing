@@ -1,0 +1,81 @@
+/* ============================================================
+ * MercSoft Theme — OPTION A: Corporate Modern Light
+ * ------------------------------------------------------------
+ * Paleta sobria y premium, derivada del logo.
+ *  - Fondo blanco / off-white
+ *  - Azul marino (#1E3A8A) del wordmark "Soft" como color primario
+ *  - Rojo (#E8302A) del wordmark "Merc" como acento de CTA
+ *  - Colores del swirl usados con sutileza
+ * ============================================================ */
+:root {
+  /* === Surfaces === */
+  --bg-page: #FFFFFF;
+  --bg-section: #F8F9FC;
+  --bg-elevated: #FFFFFF;
+  --bg-glass: rgba(255, 255, 255, 0.72);
+  --bg-glass-strong: rgba(255, 255, 255, 0.92);
+  --bg-tint: rgba(30, 58, 138, 0.04);
+  --bg-inverse: #0A1F44;
+  --bg-inverse-soft: #122c5e;
+
+  /* === Borders === */
+  --border-subtle: rgba(10, 31, 68, 0.08);
+  --border-strong: rgba(10, 31, 68, 0.18);
+  --border-divider: rgba(10, 31, 68, 0.06);
+
+  /* === Text === */
+  --text-1: #0A1F44;        /* headings - dark navy-black */
+  --text-2: #3B4566;        /* body */
+  --text-3: #6E7891;        /* muted */
+  --text-on-brand: #FFFFFF; /* on navy / red */
+  --text-on-inverse: #FFFFFF;
+  --text-on-inverse-soft: #B8C2DA;
+
+  /* === Brand colors (from wordmark) === */
+  --brand-primary: #1E3A8A;        /* "Soft" navy */
+  --brand-primary-hover: #15296B;
+  --brand-primary-soft: rgba(30, 58, 138, 0.08);
+  --brand-primary-ring: rgba(30, 58, 138, 0.18);
+
+  --brand-accent: #E8302A;         /* "Merc" red */
+  --brand-accent-hover: #C8231D;
+  --brand-accent-soft: rgba(232, 48, 42, 0.08);
+  --brand-accent-ring: rgba(232, 48, 42, 0.20);
+
+  /* === Swirl accents (from logo mark) === */
+  --swirl-teal:    #00A9BE;
+  --swirl-green:   #77BF4B;
+  --swirl-magenta: #A83794;
+  --swirl-orange:  #F5A623;
+  --swirl-purple:  #5A398A;
+  --swirl-skyblue: #4A90E2;
+  --swirl-red:     #E8302A;
+
+  /* === Effects === */
+  --shadow-card:        0 1px 2px rgba(10, 31, 68, 0.05), 0 8px 24px rgba(10, 31, 68, 0.06);
+  --shadow-card-hover:  0 1px 2px rgba(10, 31, 68, 0.06), 0 16px 40px rgba(10, 31, 68, 0.10);
+  --shadow-cta:         0 8px 24px rgba(232, 48, 42, 0.22);
+  --shadow-cta-hover:   0 12px 32px rgba(232, 48, 42, 0.34);
+  --shadow-nav:         0 1px 2px rgba(10, 31, 68, 0.04), 0 8px 28px rgba(10, 31, 68, 0.07);
+
+  --ring-focus: 0 0 0 4px var(--brand-primary-ring);
+
+  /* === Background blobs === */
+  --blob-opacity: 0.18;
+  --blob-blur: 90px;
+
+  /* === Animated brand gradient (used in Hero title) === */
+  --gradient-text: linear-gradient(
+    110deg,
+    #1E3A8A 0%,
+    #E8302A 35%,
+    #A83794 65%,
+    #1E3A8A 100%
+  );
+
+  /* === Section dividers === */
+  --grid-line: rgba(10, 31, 68, 0.05);
+
+  /* === Theme name (debug) === */
+  --theme-name: "corporate";
+}

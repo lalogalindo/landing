@@ -11,19 +11,24 @@ import {
 } from "@phosphor-icons/react";
 
 const ITEMS = [
-  { key: "ecommerce", icon: ShoppingBag, color: "#FF3366", glow: "glow-red", span: "lg:col-span-3" },
-  { key: "dashboards", icon: ChartLineUp, color: "#00E5FF", glow: "glow-cyan", span: "lg:col-span-3" },
-  { key: "ai", icon: Brain, color: "#FF00FF", glow: "glow-magenta", span: "lg:col-span-6" },
-  { key: "self_managed", icon: PencilSimple, color: "#39FF14", glow: "glow-lime", span: "lg:col-span-4" },
-  { key: "consulting", icon: Compass, color: "#FF6600", glow: "glow-orange", span: "lg:col-span-4" },
-  { key: "custom", icon: Code, color: "#00E5FF", glow: "glow-cyan", span: "lg:col-span-4" },
+  { key: "ecommerce",    icon: ShoppingBag,   color: "var(--brand-accent)",   span: "lg:col-span-3" },
+  { key: "dashboards",   icon: ChartLineUp,   color: "var(--swirl-teal)",     span: "lg:col-span-3" },
+  { key: "ai",           icon: Brain,         color: "var(--swirl-magenta)",  span: "lg:col-span-6" },
+  { key: "self_managed", icon: PencilSimple,  color: "var(--swirl-green)",    span: "lg:col-span-4" },
+  { key: "consulting",   icon: Compass,       color: "var(--swirl-orange)",   span: "lg:col-span-4" },
+  { key: "custom",       icon: Code,          color: "var(--brand-primary)",  span: "lg:col-span-4" },
 ];
 
 export default function Services() {
   const { t } = useT();
 
   return (
-    <section id="services" className="relative py-24 sm:py-32" data-testid="services-section">
+    <section
+      id="services"
+      className="relative py-24 sm:py-32"
+      style={{ background: "var(--bg-section)" }}
+      data-testid="services-section"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <SectionHeader
           label={t("services.label")}
@@ -53,15 +58,22 @@ export default function Services() {
               >
                 <div className="relative z-[1]">
                   <div
-                    className={`inline-flex items-center justify-center w-11 h-11 rounded-xl mb-5 ${item.glow}`}
-                    style={{ background: "rgba(255,255,255,0.04)", color: item.color }}
+                    className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-5"
+                    style={{
+                      background: `color-mix(in srgb, ${item.color} 12%, transparent)`,
+                      color: item.color,
+                      border: `1px solid color-mix(in srgb, ${item.color} 22%, transparent)`,
+                    }}
                   >
                     <Icon size={22} weight="duotone" />
                   </div>
-                  <h3 className="heading text-white text-2xl font-semibold tracking-tight">
+                  <h3 className="heading text-2xl font-semibold tracking-tight">
                     {data.name}
                   </h3>
-                  <p className="text-soft mt-3 leading-relaxed text-sm">
+                  <p
+                    className="mt-3 leading-relaxed text-sm"
+                    style={{ color: "var(--text-2)" }}
+                  >
                     {data.desc}
                   </p>
                 </div>
@@ -79,10 +91,17 @@ export function SectionHeader({ label, title, lede, align = "left" }) {
   return (
     <div className={`max-w-3xl ${align === "center" ? "mx-auto text-center" : ""}`}>
       <div className="section-label">{label}</div>
-      <h2 className="heading mt-3 text-white text-4xl sm:text-5xl font-bold tracking-tight">
+      <h2 className="heading mt-3 text-4xl sm:text-5xl font-bold tracking-tight">
         {title}
       </h2>
-      {lede && <p className="text-soft mt-5 text-base sm:text-lg leading-relaxed">{lede}</p>}
+      {lede && (
+        <p
+          className="mt-5 text-base sm:text-lg leading-relaxed"
+          style={{ color: "var(--text-2)" }}
+        >
+          {lede}
+        </p>
+      )}
     </div>
   );
 }

@@ -1,0 +1,21 @@
+/* ============================================================
+ * MercSoft · Theme Selector
+ * ------------------------------------------------------------
+ * Cambia el tema activo: comenta UNA línea y descomenta la otra.
+ * Es lo único que necesitas tocar.
+ *
+ * Cada archivo de tema redefine las mismas CSS custom properties
+ * (variables) que consumen todos los componentes:
+ *   --bg-page, --text-1, --brand-primary, --brand-accent,
+ *   --swirl-teal, --gradient-text, etc.
+ * ============================================================ */
+
+/* OPCIÓN A · Corporate Modern Light  (active) */
+@import "./theme-corporate.css";
+
+/* OPCIÓN B · Vibrant Light
+ * Para activar este tema:
+ *   1) Comenta el import de arriba
+ *   2) Descomenta la siguiente línea
+ */
+/* @import "./theme-vibrant.css"; */

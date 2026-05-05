@@ -15,7 +15,6 @@ const PHONE = process.env.REACT_APP_CONTACT_PHONE || "2221401900";
 const EMAIL = process.env.REACT_APP_CONTACT_EMAIL || "lalogalindo@gmail.com";
 
 const formatPhone = (p) => {
-  // Format Mexican number 2221401900 -> 222 140 1900
   const d = (p || "").replace(/\D/g, "");
   if (d.length === 10) return `${d.slice(0, 3)} ${d.slice(3, 6)} ${d.slice(6)}`;
   return p;
@@ -74,8 +73,21 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 overflow-hidden" data-testid="contact-section">
-      <div className="orb" style={{ width: 420, height: 420, bottom: -180, left: -120, background: "#FF00FF", opacity: 0.18 }} />
+    <section
+      id="contact"
+      className="relative py-24 sm:py-32 overflow-hidden"
+      data-testid="contact-section"
+    >
+      <div
+        className="orb"
+        style={{
+          width: 460,
+          height: 460,
+          bottom: -180,
+          left: -120,
+          background: "var(--swirl-orange)",
+        }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-12 gap-10">
           <div className="lg:col-span-5">
@@ -91,7 +103,7 @@ export default function Contact() {
                 label={t("contact.info_email")}
                 value={EMAIL}
                 href={`mailto:${EMAIL}`}
-                color="#00E5FF"
+                color="var(--brand-primary)"
                 testid="contact-info-email"
               />
               <InfoRow
@@ -99,14 +111,14 @@ export default function Contact() {
                 label={t("contact.info_phone")}
                 value={formatPhone(PHONE)}
                 href={`tel:+52${PHONE}`}
-                color="#FF00FF"
+                color="var(--brand-accent)"
                 testid="contact-info-phone"
               />
               <InfoRow
                 icon={Clock}
                 label={t("contact.info_hours")}
                 value={t("contact.info_hours_value")}
-                color="#39FF14"
+                color="var(--swirl-green)"
                 testid="contact-info-hours"
               />
             </div>
@@ -118,14 +130,26 @@ export default function Contact() {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.55 }}
             onSubmit={submit}
-            className="lg:col-span-7 glass-strong rounded-3xl p-6 sm:p-8"
+            className="lg:col-span-7 rounded-3xl p-6 sm:p-8"
+            style={{
+              background: "var(--bg-elevated)",
+              border: "1px solid var(--border-subtle)",
+              boxShadow: "var(--shadow-card)",
+            }}
             data-testid="contact-form"
           >
             {done && (
-              <div className="mb-6 flex items-center gap-3 rounded-2xl border border-emerald-400/30 bg-emerald-400/10 px-4 py-3 text-emerald-300">
+              <div
+                className="mb-6 flex items-center gap-3 rounded-2xl px-4 py-3"
+                style={{
+                  border: "1px solid color-mix(in srgb, var(--swirl-green) 32%, transparent)",
+                  background: "color-mix(in srgb, var(--swirl-green) 10%, transparent)",
+                  color: "color-mix(in srgb, var(--swirl-green) 80%, var(--text-1))",
+                }}
+              >
                 <CheckCircle size={20} weight="fill" />
                 <div className="text-sm">
-                  <div className="heading text-white">{t("contact.form.success_title")}</div>
+                  <div className="heading">{t("contact.form.success_title")}</div>
                   <div>{t("contact.form.success_desc")}</div>
                 </div>
               </div>
@@ -188,7 +212,7 @@ export default function Contact() {
                 <ReCAPTCHA
                   ref={recaptchaRef}
                   sitekey={RECAPTCHA_SITE_KEY}
-                  theme="dark"
+                  theme="light"
                   onChange={(t) => setToken(t)}
                   onExpired={() => setToken(null)}
                 />
@@ -213,9 +237,13 @@ export default function Contact() {
 function Field({ label, required, children }) {
   return (
     <label className="block">
-      <span className="mono text-soft block mb-2">
+      <span className="mono block mb-2" style={{ color: "var(--text-3)" }}>
         {label}
-        {required && <span className="text-cyan ml-1">*</span>}
+        {required && (
+          <span className="ml-1" style={{ color: "var(--brand-accent)" }}>
+            *
+          </span>
+        )}
       </span>
       {children}
     </label>
@@ -227,18 +255,31 @@ function InfoRow({ icon: Icon, label, value, href, color, testid }) {
   return (
     <Wrapper
       href={href}
-      className="group flex items-center gap-4 glass rounded-2xl p-4 hover:border-white/20 transition-colors"
+      className="group flex items-center gap-4 rounded-2xl p-4 transition-colors"
+      style={{
+        background: "var(--bg-elevated)",
+        border: "1px solid var(--border-subtle)",
+        boxShadow: "var(--shadow-card)",
+      }}
       data-testid={testid}
     >
       <span
         className="inline-flex items-center justify-center w-10 h-10 rounded-xl"
-        style={{ background: "rgba(255,255,255,0.04)", color, boxShadow: `0 0 24px ${color}33` }}
+        style={{
+          color,
+          background: `color-mix(in srgb, ${color} 12%, transparent)`,
+          border: `1px solid color-mix(in srgb, ${color} 22%, transparent)`,
+        }}
       >
         <Icon size={20} weight="duotone" />
       </span>
       <div>
-        <div className="mono text-soft">{label}</div>
-        <div className="text-white text-base group-hover:text-cyan transition-colors">{value}</div>
+        <div className="mono" style={{ color: "var(--text-3)" }}>
+          {label}
+        </div>
+        <div className="text-base" style={{ color: "var(--text-1)" }}>
+          {value}
+        </div>
       </div>
     </Wrapper>
   );

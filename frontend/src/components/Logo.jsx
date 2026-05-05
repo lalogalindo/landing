@@ -11,19 +11,18 @@ export default function Logo({ size = 36, withWordmark = true, className = "" })
         alt="MercSoft logo"
         width={size}
         height={size}
-        style={{
-          width: size,
-          height: size,
-          objectFit: "contain",
-          mixBlendMode: "screen",
-          filter: "drop-shadow(0 0 14px rgba(0, 229, 255, 0.25))",
-        }}
+        style={{ width: size, height: size, objectFit: "contain" }}
         draggable={false}
       />
       {withWordmark && (
         <span
           className="heading"
-          style={{ fontWeight: 800, fontSize: 18, letterSpacing: "-0.02em", color: "#fff" }}
+          style={{
+            fontWeight: 800,
+            fontSize: 18,
+            letterSpacing: "-0.02em",
+            color: "var(--text-1)",
+          }}
         >
           MercSoft
         </span>

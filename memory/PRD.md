@@ -23,6 +23,12 @@
 - Frontend: React 19 (CRA) + Tailwind + shadcn/ui (Accordion, Sonner toaster) + Phosphor Icons + framer-motion + react-google-recaptcha. i18n via custom React Context (`/src/i18n`).
 - All public config (phone, email, recipient, recaptcha site key) routed via `.env` files — no hardcoded secrets.
 
+## Theming
+The entire palette lives in CSS custom properties. Two themes ship; swap them by editing `/app/frontend/src/styles/theme.css` (one-line @import).
+- `theme-corporate.css` (default, Option A): white bg, navy primary, red accent, swirl colors as subtle accents.
+- `theme-vibrant.css` (Option B): warm bg, more saturated swirl colors, larger visible blobs.
+All components consume `var(--brand-primary)`, `var(--brand-accent)`, `var(--swirl-*)`, `var(--text-*)`, `var(--bg-*)`, `var(--shadow-*)`, `var(--gradient-text)` — no hardcoded hex values.
+
 ## What's been implemented (Dec 2025)
 - [x] Backend `/api/`, `/api/config`, `/api/status`, `/api/contact` (Pydantic validation + reCAPTCHA verify + Resend send + Mongo persistence + 500 fallback on quota).
 - [x] Full landing page with Hero (animated headline, control-room visual, tech ticker), Services (bento grid, glassmorphic + spotlight hover), Process (highlighted requirements step), Privacy (8-section accordion), Contact (form + reCAPTCHA + Sonner toasts), Footer (copyright + phone + email).

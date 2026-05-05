@@ -40,6 +40,7 @@ export default function Nav() {
           className={`flex items-center justify-between rounded-full px-4 sm:px-5 py-2.5 transition-all ${
             scrolled ? "glass-strong" : "glass"
           }`}
+          style={scrolled ? { boxShadow: "var(--shadow-nav)" } : undefined}
         >
           <button
             onClick={() => scrollTo("hero")}
@@ -53,7 +54,10 @@ export default function Nav() {
               <button
                 key={l.id}
                 onClick={() => scrollTo(l.id)}
-                className="px-4 py-2 text-sm rounded-full text-white/80 hover:text-white hover:bg-white/5 transition-colors"
+                className="px-4 py-2 text-sm rounded-full transition-colors"
+                style={{ color: "var(--text-2)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--brand-primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-2)")}
                 data-testid={`nav-link-${l.id}`}
               >
                 {l.label}
@@ -70,7 +74,8 @@ export default function Nav() {
             </button>
           </div>
           <button
-            className="md:hidden p-2 rounded-full hover:bg-white/5"
+            className="md:hidden p-2 rounded-full"
+            style={{ color: "var(--text-1)" }}
             onClick={() => setOpen(!open)}
             aria-label="Menu"
             data-testid="nav-mobile-toggle"
@@ -80,12 +85,16 @@ export default function Nav() {
         </div>
 
         {open && (
-          <div className="md:hidden mt-2 glass-strong rounded-2xl p-3 space-y-1" data-testid="nav-mobile-menu">
+          <div
+            className="md:hidden mt-2 glass-strong rounded-2xl p-3 space-y-1"
+            data-testid="nav-mobile-menu"
+          >
             {links.map((l) => (
               <button
                 key={l.id}
                 onClick={() => scrollTo(l.id)}
-                className="block w-full text-left px-4 py-3 rounded-xl text-white/85 hover:bg-white/5"
+                className="block w-full text-left px-4 py-3 rounded-xl"
+                style={{ color: "var(--text-1)" }}
                 data-testid={`nav-mobile-link-${l.id}`}
               >
                 {l.label}

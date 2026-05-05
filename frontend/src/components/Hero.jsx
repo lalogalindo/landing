@@ -3,6 +3,14 @@ import { motion } from "framer-motion";
 import { useT } from "../i18n";
 import { ArrowRight, Sparkle, CursorClick } from "@phosphor-icons/react";
 
+const SWIRL = [
+  "var(--swirl-teal)",
+  "var(--swirl-magenta)",
+  "var(--swirl-green)",
+  "var(--swirl-orange)",
+  "var(--swirl-red)",
+];
+
 export default function Hero() {
   const { t } = useT();
   const ticker = t("hero.ticker") || [];
@@ -13,11 +21,15 @@ export default function Hero() {
   };
 
   return (
-    <section id="hero" className="relative pt-32 sm:pt-36 pb-24 overflow-hidden" data-testid="hero-section">
-      {/* Decorative orbs */}
-      <div className="orb" style={{ width: 520, height: 520, top: -120, left: -80, background: "#00E5FF" }} />
-      <div className="orb" style={{ width: 480, height: 480, top: 60, right: -120, background: "#FF00FF" }} />
-      <div className="orb" style={{ width: 360, height: 360, bottom: -180, left: "30%", background: "#39FF14" }} />
+    <section
+      id="hero"
+      className="relative pt-32 sm:pt-36 pb-24 overflow-hidden"
+      data-testid="hero-section"
+    >
+      {/* Decorative blobs (intensity controlled by --blob-opacity per theme) */}
+      <div className="orb" style={{ width: 540, height: 540, top: -140, left: -100, background: "var(--swirl-teal)" }} />
+      <div className="orb" style={{ width: 480, height: 480, top: 60, right: -120, background: "var(--swirl-magenta)" }} />
+      <div className="orb" style={{ width: 360, height: 360, bottom: -180, left: "30%", background: "var(--swirl-orange)" }} />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-12 gap-10 items-center">
@@ -29,8 +41,8 @@ export default function Hero() {
               className="inline-flex items-center gap-2 glass rounded-full px-3 py-1.5 mb-7"
               data-testid="hero-eyebrow"
             >
-              <Sparkle size={14} weight="fill" className="text-cyan" />
-              <span className="mono text-white/80">{t("hero.eyebrow")}</span>
+              <Sparkle size={14} weight="fill" style={{ color: "var(--brand-accent)" }} />
+              <span className="mono" style={{ color: "var(--text-2)" }}>{t("hero.eyebrow")}</span>
             </motion.div>
 
             <motion.h1
@@ -40,16 +52,17 @@ export default function Hero() {
               className="hero-h1"
               data-testid="hero-title"
             >
-              <span className="text-white">{t("hero.title_a")}</span>{" "}
+              <span>{t("hero.title_a")}</span>{" "}
               <span className="brand-gradient-text">{t("hero.title_b")}</span>{" "}
-              <span className="text-white/85">{t("hero.title_c")}</span>
+              <span style={{ color: "var(--text-2)" }}>{t("hero.title_c")}</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-7 max-w-xl text-base sm:text-lg text-soft leading-relaxed"
+              className="mt-7 max-w-xl text-base sm:text-lg leading-relaxed"
+              style={{ color: "var(--text-2)" }}
               data-testid="hero-lede"
             >
               {t("hero.lede")}
@@ -85,11 +98,21 @@ export default function Hero() {
               data-testid="hero-stats"
             >
               {[1, 2, 3].map((i) => (
-                <div key={i} className="glass rounded-2xl p-4">
+                <div
+                  key={i}
+                  className="rounded-2xl p-4"
+                  style={{
+                    background: "var(--bg-elevated)",
+                    border: "1px solid var(--border-subtle)",
+                    boxShadow: "var(--shadow-card)",
+                  }}
+                >
                   <div className="heading text-2xl font-bold tracking-tight">
                     {t(`hero.stat_${i}_value`)}
                   </div>
-                  <div className="mono text-soft mt-1">{t(`hero.stat_${i}_label`)}</div>
+                  <div className="mono mt-1" style={{ color: "var(--text-3)" }}>
+                    {t(`hero.stat_${i}_label`)}
+                  </div>
                 </div>
               ))}
             </motion.div>
@@ -108,13 +131,22 @@ export default function Hero() {
 
         {/* Tech ticker */}
         <div className="mt-20 relative overflow-hidden" data-testid="hero-ticker">
-          <div className="absolute inset-y-0 left-0 w-24 z-10 bg-gradient-to-r from-[#050510] to-transparent pointer-events-none" />
-          <div className="absolute inset-y-0 right-0 w-24 z-10 bg-gradient-to-l from-[#050510] to-transparent pointer-events-none" />
+          <div
+            className="absolute inset-y-0 left-0 w-24 z-10 pointer-events-none"
+            style={{ background: "linear-gradient(90deg, var(--bg-page), transparent)" }}
+          />
+          <div
+            className="absolute inset-y-0 right-0 w-24 z-10 pointer-events-none"
+            style={{ background: "linear-gradient(-90deg, var(--bg-page), transparent)" }}
+          />
           <div className="marquee">
             {[...ticker, ...ticker].map((tag, i) => (
               <span
                 key={i}
-                className="mono text-soft hover:text-white transition-colors whitespace-nowrap"
+                className="mono whitespace-nowrap transition-colors"
+                style={{ color: "var(--text-3)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "var(--brand-primary)")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-3)")}
               >
                 {tag}
               </span>
@@ -127,58 +159,63 @@ export default function Hero() {
 }
 
 function HeroVisual() {
-  // Animated ‘control surface’ tile
   return (
     <div className="relative aspect-square max-w-[460px] ml-auto">
-      {/* Outer glow ring */}
+      {/* Outer rainbow glow ring (subtle on light) */}
       <div
         className="absolute inset-0 rounded-[36px]"
         style={{
           background:
-            "conic-gradient(from 90deg, #00E5FF, #FF00FF, #39FF14, #FF6600, #FF3366, #00E5FF)",
+            "conic-gradient(from 90deg, var(--swirl-teal), var(--swirl-magenta), var(--swirl-green), var(--swirl-orange), var(--swirl-red), var(--swirl-teal))",
           filter: "blur(28px)",
-          opacity: 0.45,
+          opacity: 0.55,
         }}
       />
-      <div className="relative h-full w-full rounded-[32px] glass-strong p-6 overflow-hidden">
+      <div className="relative h-full w-full rounded-[32px] surface-inverse p-6 overflow-hidden">
         <div className="absolute inset-0 divider-grid opacity-40" />
         {/* Header */}
         <div className="relative flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-[#FF3366]" />
-            <span className="w-2.5 h-2.5 rounded-full bg-[#FF6600]" />
-            <span className="w-2.5 h-2.5 rounded-full bg-[#39FF14]" />
+            <span className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--swirl-red)" }} />
+            <span className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--swirl-orange)" }} />
+            <span className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--swirl-green)" }} />
           </div>
-          <span className="mono text-soft">mercsoft.studio</span>
+          <span className="mono mono-soft">mercsoft.studio</span>
         </div>
 
         {/* Body lines */}
         <div className="relative mt-6 space-y-3">
-          <Row color="#00E5FF" label="ai.assist" value="ON" w="w-3/5" />
-          <Row color="#FF00FF" label="dashboard.realtime" value="LIVE" w="w-4/5" />
-          <Row color="#39FF14" label="ecommerce.checkout" value="OK" w="w-2/3" />
-          <Row color="#FF6600" label="cms.preview" value="DRAFT" w="w-1/2" />
-          <Row color="#FF3366" label="agents.deployed" value="3" w="w-3/5" />
+          <Row color={SWIRL[0]} label="ai.assist" value="ON" w="60%" />
+          <Row color={SWIRL[1]} label="dashboard.realtime" value="LIVE" w="80%" />
+          <Row color={SWIRL[2]} label="ecommerce.checkout" value="OK" w="66%" />
+          <Row color={SWIRL[3]} label="cms.preview" value="DRAFT" w="50%" />
+          <Row color={SWIRL[4]} label="agents.deployed" value="3" w="60%" />
         </div>
 
         {/* Mini chart */}
-        <div className="relative mt-6 h-24 rounded-2xl bg-white/5 border border-white/10 p-3">
+        <div
+          className="relative mt-6 h-24 rounded-2xl p-3"
+          style={{
+            background: "rgba(255,255,255,0.06)",
+            border: "1px solid rgba(255,255,255,0.10)",
+          }}
+        >
           <svg viewBox="0 0 200 80" className="w-full h-full">
             <defs>
-              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="0">
-                <stop offset="0" stopColor="#00E5FF" />
-                <stop offset="1" stopColor="#FF00FF" />
+              <linearGradient id="hgrad" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stopColor="var(--swirl-teal)" />
+                <stop offset="1" stopColor="var(--swirl-magenta)" />
               </linearGradient>
             </defs>
             <polyline
               fill="none"
-              stroke="url(#g1)"
+              stroke="url(#hgrad)"
               strokeWidth="2.5"
               points="0,60 20,52 40,48 60,40 80,44 100,30 120,34 140,22 160,28 180,16 200,20"
             />
             <polyline
               fill="none"
-              stroke="rgba(255,255,255,0.2)"
+              stroke="rgba(255,255,255,0.25)"
               strokeDasharray="3 4"
               strokeWidth="1"
               points="0,70 200,60"
@@ -191,7 +228,12 @@ function HeroVisual() {
           {["LLM", "RAG", "EDGE", "GRAPHQL", "STRIPE"].map((c) => (
             <span
               key={c}
-              className="mono text-white/80 px-2.5 py-1 rounded-full bg-white/5 border border-white/10"
+              className="mono px-2.5 py-1 rounded-full"
+              style={{
+                color: "rgba(255,255,255,0.92)",
+                background: "rgba(255,255,255,0.06)",
+                border: "1px solid rgba(255,255,255,0.12)",
+              }}
             >
               {c}
             </span>
@@ -205,12 +247,20 @@ function HeroVisual() {
 function Row({ color, label, value, w }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="w-1.5 h-1.5 rounded-full" style={{ background: color, boxShadow: `0 0 12px ${color}` }} />
-      <span className="mono text-soft min-w-[160px]">{label}</span>
-      <div className="flex-1 h-1 rounded-full bg-white/5 overflow-hidden">
-        <div className={`h-full ${w}`} style={{ background: color, opacity: 0.85 }} />
+      <span
+        className="w-1.5 h-1.5 rounded-full"
+        style={{ background: color, boxShadow: `0 0 10px ${color}` }}
+      />
+      <span className="mono mono-soft min-w-[160px]">{label}</span>
+      <div
+        className="flex-1 h-1 rounded-full overflow-hidden"
+        style={{ background: "rgba(255,255,255,0.10)" }}
+      >
+        <div className="h-full" style={{ width: w, background: color, opacity: 0.9 }} />
       </div>
-      <span className="mono text-white/85 min-w-[36px] text-right">{value}</span>
+      <span className="mono min-w-[36px] text-right" style={{ color: "rgba(255,255,255,0.95)" }}>
+        {value}
+      </span>
     </div>
   );
 }

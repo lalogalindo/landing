@@ -9,8 +9,21 @@ export default function Process() {
   const steps = t("process.steps");
 
   return (
-    <section id="process" className="relative py-24 sm:py-32 overflow-hidden" data-testid="process-section">
-      <div className="orb" style={{ width: 420, height: 420, top: 100, right: -160, background: "#00E5FF", opacity: 0.18 }} />
+    <section
+      id="process"
+      className="relative py-24 sm:py-32 overflow-hidden"
+      data-testid="process-section"
+    >
+      <div
+        className="orb"
+        style={{
+          width: 460,
+          height: 460,
+          top: 80,
+          right: -180,
+          background: "var(--swirl-magenta)",
+        }}
+      />
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <SectionHeader
           label={t("process.label")}
@@ -18,9 +31,16 @@ export default function Process() {
           lede={t("process.lede")}
         />
 
-        <div className="mt-10 inline-flex items-center gap-2 glass rounded-full px-3 py-1.5">
-          <Target size={14} weight="fill" className="text-magenta" />
-          <span className="mono text-white/85">{t("process.requirements_pill")}</span>
+        <div
+          className="mt-10 inline-flex items-center gap-2 rounded-full px-3 py-1.5"
+          style={{
+            background: "var(--brand-accent-soft)",
+            border: "1px solid color-mix(in srgb, var(--brand-accent) 22%, transparent)",
+            color: "var(--brand-accent)",
+          }}
+        >
+          <Target size={14} weight="fill" />
+          <span className="mono">{t("process.requirements_pill")}</span>
         </div>
 
         {/* Timeline */}
@@ -32,37 +52,58 @@ export default function Process() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.25 }}
               transition={{ duration: 0.55, delay: i * 0.08 }}
-              className={`relative rounded-3xl p-7 ${
-                s.highlight
-                  ? "lg:col-span-12 glass-strong border border-cyan-500/30"
-                  : "lg:col-span-4 glass border border-white/10"
-              }`}
+              className={`relative rounded-3xl p-7 ${s.highlight ? "lg:col-span-12" : "lg:col-span-4"}`}
               style={
                 s.highlight
                   ? {
                       background:
-                        "radial-gradient(1200px 200px at 0% 0%, rgba(0,229,255,0.10), transparent 60%), radial-gradient(800px 200px at 100% 100%, rgba(255,0,255,0.10), transparent 60%), rgba(10,11,20,0.7)",
+                        "radial-gradient(1100px 220px at 0% 0%, color-mix(in srgb, var(--swirl-teal) 12%, transparent), transparent 60%), radial-gradient(800px 220px at 100% 100%, color-mix(in srgb, var(--swirl-magenta) 12%, transparent), transparent 60%), var(--bg-elevated)",
+                      border: "1px solid color-mix(in srgb, var(--brand-accent) 35%, transparent)",
+                      boxShadow: "var(--shadow-card-hover)",
                     }
-                  : undefined
+                  : {
+                      background: "var(--bg-elevated)",
+                      border: "1px solid var(--border-subtle)",
+                      boxShadow: "var(--shadow-card)",
+                    }
               }
               data-testid={`process-step-${i}`}
             >
               <div className="flex items-start gap-6 flex-wrap lg:flex-nowrap">
-                <div className="step-num text-soft min-w-[88px]">
+                <div className="step-num min-w-[88px]">
                   {String(i + 1).padStart(2, "0")}
                 </div>
                 <div className="flex-1">
-                  <div className="mono text-cyan">{s.tag}</div>
-                  <h3 className="heading mt-2 text-white text-2xl sm:text-3xl font-semibold tracking-tight flex items-center gap-3 flex-wrap">
+                  <div className="mono" style={{ color: "var(--brand-primary)" }}>
+                    {s.tag}
+                  </div>
+                  <h3 className="heading mt-2 text-2xl sm:text-3xl font-semibold tracking-tight flex items-center gap-3 flex-wrap">
                     {s.name}
                     {s.highlight && (
-                      <span className="mono text-[10px] tracking-widest px-2 py-1 rounded-full glow-cyan text-cyan bg-white/5">
-                        <Sparkle size={10} weight="fill" className="inline mr-1" />
+                      <span
+                        className="mono"
+                        style={{
+                          fontSize: 10,
+                          letterSpacing: "0.18em",
+                          padding: "4px 10px",
+                          borderRadius: 9999,
+                          color: "var(--brand-accent)",
+                          background: "var(--brand-accent-soft)",
+                          border: "1px solid color-mix(in srgb, var(--brand-accent) 28%, transparent)",
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: 4,
+                        }}
+                      >
+                        <Sparkle size={10} weight="fill" />
                         PRIMARY FOCUS
                       </span>
                     )}
                   </h3>
-                  <p className={`mt-3 leading-relaxed ${s.highlight ? "text-white/90 text-base sm:text-lg max-w-3xl" : "text-soft text-sm"}`}>
+                  <p
+                    className={`mt-3 leading-relaxed ${s.highlight ? "text-base sm:text-lg max-w-3xl" : "text-sm"}`}
+                    style={{ color: "var(--text-2)" }}
+                  >
                     {s.desc}
                   </p>
                 </div>
