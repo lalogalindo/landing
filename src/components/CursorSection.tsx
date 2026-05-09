@@ -22,11 +22,11 @@ export const CursorSection = () => {
 
   return (
     <section className="relative overflow-hidden bg-white py-20 sm:py-24" id="interactive">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-brand-cyan/30 to-transparent" />
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <div
           ref={containerRef}
-          className="group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-brand-950 shadow-[0_28px_110px_rgba(16,42,67,0.22)]"
+          className="group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-brand-950 shadow-[0_28px_110px_rgba(36,31,71,0.24)]"
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => {
@@ -38,7 +38,7 @@ export const CursorSection = () => {
         >
           <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:44px_44px]" />
           <motion.div
-            className="absolute left-0 top-0 h-72 w-72 rounded-full bg-blue-400 blur-[90px]"
+            className="absolute left-0 top-0 h-72 w-72 rounded-full bg-brand-magenta blur-[90px]"
             style={{
               x: useTransform(x, (value) => value - 144),
               y: useTransform(y, (value) => value - 144),
@@ -52,11 +52,11 @@ export const CursorSection = () => {
             transition={{ type: 'spring', stiffness: 220, damping: 28 }}
           >
             <div className="flex flex-col justify-center">
-              <span className="text-sm font-black uppercase tracking-[0.24em] text-blue-300">Momento visual</span>
+              <span className="text-sm font-black uppercase tracking-[0.24em] text-brand-cyan">Momento visual</span>
               <h2 className="mt-4 max-w-xl text-4xl font-black tracking-[-0.04em] text-white sm:text-5xl">
                 Sistemas que conectan datos, equipos y decisiones.
               </h2>
-              <p className="mt-5 max-w-lg text-lg leading-8 text-blue-100/75">
+              <p className="mt-5 max-w-lg text-lg leading-8 text-brand-100/75">
                 Diseñamos flujos donde cada integración trabaja como una capa de inteligencia para tu operación.
               </p>
             </div>
@@ -72,7 +72,7 @@ export const CursorSection = () => {
                     <FontAwesomeIcon icon={item.icon} />
                   </span>
                   <h3 className="text-xl font-black">{item.title}</h3>
-                  <p className="mt-2 text-sm font-medium text-blue-100/70">{item.text}</p>
+                  <p className="mt-2 text-sm font-medium text-brand-100/70">{item.text}</p>
                 </div>
               ))}
             </div>
