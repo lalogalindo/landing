@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { trackEvent } from '../analytics/events';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
-import mercsoftLogo from '../../main-logo.png';
+import { mercsoftLogo } from '@/assets';
 
 export const Navbar = () => {
   const { t, i18n } = useTranslation();

@@ -1,1 +1,3 @@
-export { default as mercsoftLogo } from './main-logo.png';
+import mercsoftLogo from '../../main-logo.png';
+
+export { mercsoftLogo };
