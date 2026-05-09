@@ -29,12 +29,13 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-panel py-3' : 'bg-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed inset-x-0 top-0 z-50 px-4 py-4 transition-all duration-300 sm:px-6 lg:px-8">
+      <div className={`mx-auto max-w-7xl rounded-3xl border px-4 transition-all duration-300 sm:px-5 ${isScrolled ? 'border-white/80 bg-white/85 py-3 shadow-[0_18px_60px_rgba(16,42,67,0.12)] backdrop-blur-xl' : 'border-transparent bg-white/35 py-3 backdrop-blur-md'}`}>
         <div className="flex justify-between items-center">
           <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo(0,0)}>
             {/* Real Logo or Text */}
-            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-brand-900 to-brand-600">
+            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-900 text-sm font-black text-white shadow-lg shadow-blue-900/20">M</span>
+            <span className="text-2xl font-black tracking-[-0.04em] bg-clip-text text-transparent bg-gradient-to-r from-brand-900 to-brand-accent">
               MercSoft
             </span>
           </div>
@@ -42,15 +43,15 @@ export const Navbar = () => {
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} className="text-brand-700 hover:text-brand-accent font-medium transition-colors">
+              <a key={link.name} href={link.href} className="rounded-full px-3 py-2 text-sm font-bold text-brand-700 transition-colors hover:bg-brand-50 hover:text-brand-accent">
                 {link.name}
               </a>
             ))}
-            <button onClick={toggleLanguage} className="text-brand-600 hover:text-brand-900 transition-colors flex items-center gap-2" aria-label="Toggle language">
+            <button onClick={toggleLanguage} className="flex items-center gap-2 rounded-full px-3 py-2 text-sm font-bold text-brand-600 transition-colors hover:bg-brand-50 hover:text-brand-900" aria-label="Toggle language">
               <FontAwesomeIcon icon={faGlobe} />
               <span className="uppercase text-sm font-semibold">{i18n.language.substring(0,2)}</span>
             </button>
-            <a href="#cta" className="btn-primary py-2 px-4 text-sm" onClick={() => trackEvent('click_cta', { location: 'navbar' })}>
+            <a href="#cta" className="btn-primary py-2.5 px-5 text-sm rounded-full" onClick={() => trackEvent('click_cta', { location: 'navbar' })}>
               {t('nav.quote')}
             </a>
           </div>
@@ -69,7 +70,7 @@ export const Navbar = () => {
 
       {/* Mobile Menu Dropdown */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-panel absolute top-full left-0 w-full flex flex-col py-4 px-6 space-y-4 border-t border-gray-100">
+        <div className="absolute left-4 right-4 top-[calc(100%+0.5rem)] flex flex-col space-y-4 rounded-3xl border border-white/80 bg-white/90 px-6 py-5 shadow-2xl backdrop-blur-xl md:hidden">
           {navLinks.map((link) => (
             <a key={link.name} href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="text-brand-800 font-medium text-lg">
               {link.name}

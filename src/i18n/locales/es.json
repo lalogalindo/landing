@@ -6,42 +6,81 @@
     "quote": "Cotizar"
   },
   "hero": {
-    "badge": "Cero humo. Solo resultados.",
-    "title1": "Software a la medida para",
-    "title2": "problemas reales de negocio.",
-    "subtitle": "Construimos soluciones técnicas rápidas, escalables y confiables. Sin magia 360, solo ingeniería sólida.",
-    "cta": "Iniciar Proyecto",
-    "secondary": "Ver Soluciones",
+    "badge": "Estudio de software para crecer más rápido.",
+    "title1": "Software a la medida que mueve",
+    "title2": "tu operación.",
+    "subtitle": "Automatizamos procesos, lanzamos SaaS y conectamos IA, WhatsApp y datos con ingeniería clara.",
+    "cta": "Agendar diagnóstico",
+    "secondary": "Ver capacidades",
     "typewriter": [
-      "Automatización de Procesos",
-      "SaaS a la Medida",
-      "Agentes de IA por WhatsApp",
-      "Landing Pages de Negocio"
+      "Automatización de procesos",
+      "SaaS a la medida",
+      "Bots de WhatsApp con IA",
+      "Integraciones inteligentes"
     ]
   },
   "solutions": {
     "title": "Qué construimos",
-    "subtitle": "Capacidades técnicas diseñadas para acelerar tu negocio.",
+    "subtitle": "De sistemas internos a agentes con IA: construimos piezas técnicas que reducen fricción y aumentan velocidad.",
     "items": {
-      "landing": { "title": "Landing Pages", "desc": "Páginas optimizadas, rápidas y orientadas a la conversión." },
-      "automation": { "title": "Automatizaciones", "desc": "Conexión de APIs para ahorrarte horas de trabajo manual." },
-      "crm": { "title": "CRM a la Medida", "desc": "Gestiona tus operaciones con una herramienta construida para ti." },
-      "saas": { "title": "Desarrollo SaaS", "desc": "Ingeniería de aplicaciones web de inicio a fin." },
-      "whatsapp": { "title": "Bots de WhatsApp", "desc": "Flujos automatizados para atención y ventas." },
-      "ai": { "title": "Integración de IA", "desc": "Agentes inteligentes con LLMs para tus casos de uso." }
-    }
+      "landing": {
+        "title": "Landing Pages",
+        "desc": "Páginas rápidas y enfocadas en convertir tráfico en conversaciones."
+      },
+      "automation": {
+        "title": "Automatizaciones",
+        "desc": "APIs, tareas y flujos que eliminan trabajo manual repetitivo."
+      },
+      "crm": {
+        "title": "CRM a la Medida",
+        "desc": "Controla ventas, clientes y operación con una plataforma propia."
+      },
+      "saas": {
+        "title": "Desarrollo SaaS",
+        "desc": "Productos web robustos para vender, operar y escalar en la nube."
+      },
+      "whatsapp": {
+        "title": "Bots de WhatsApp",
+        "desc": "Atención, seguimiento y ventas automatizadas en el canal que tus clientes ya usan."
+      },
+      "ai": {
+        "title": "Integración de IA",
+        "desc": "Agentes e IA aplicada para clasificar, responder, resumir y decidir mejor."
+      }
+    },
+    "eyebrow": "Servicios",
+    "cardCta": "Diseñado para escalar"
   },
   "process": {
     "title": "Cómo trabajamos",
-    "step1": { "title": "Descubrimiento", "desc": "Entendemos tu problema exacto." },
-    "step2": { "title": "Propuesta", "desc": "Alcance, arquitectura y tiempos claros." },
-    "step3": { "title": "Desarrollo", "desc": "Construcción ágil con actualizaciones." },
-    "step4": { "title": "Entrega", "desc": "Despliegue, documentación y entrega." }
+    "step1": {
+      "title": "Descubrimiento",
+      "desc": "Entendemos tu problema exacto."
+    },
+    "step2": {
+      "title": "Propuesta",
+      "desc": "Alcance, arquitectura y tiempos claros."
+    },
+    "step3": {
+      "title": "Desarrollo",
+      "desc": "Construcción ágil con actualizaciones."
+    },
+    "step4": {
+      "title": "Entrega",
+      "desc": "Despliegue, documentación y entrega."
+    },
+    "subtitle": "De idea a producto funcional con claridad, entregables visibles y decisiones técnicas sin ruido."
   },
   "cta": {
-    "title": "¿Listo para mejorar tu stack?",
-    "subtitle": "Hablemos sobre cómo el software puede resolver tu cuello de botella.",
-    "button": "Contactar a un Ingeniero"
+    "title": "Convirtamos tu cuello de botella en software que vende, opera y escala.",
+    "subtitle": "Cuéntanos dónde se está frenando tu negocio. Te devolvemos una ruta técnica clara y accionable.",
+    "button": "Hablar con MercSoft",
+    "eyebrow": "Sprint estratégico",
+    "highlights": {
+      "speed": "Diagnóstico directo",
+      "quality": "Arquitectura limpia",
+      "ai": "IA donde aporta valor"
+    }
   },
   "agent": {
     "trigger": "Cotización Rápida",
