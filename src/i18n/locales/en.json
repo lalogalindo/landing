@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "solutions": "Solutions",
+    "process": "Process",
+    "contact": "Contact Us",
+    "quote": "Get a Quote"
+  },
+  "hero": {
+    "badge": "No fluff. Just results.",
+    "title1": "Custom software for",
+    "title2": "real business problems.",
+    "subtitle": "We build fast, scalable, and reliable technical solutions. No 360 magic, just solid engineering.",
+    "cta": "Start a Project",
+    "secondary": "View Solutions",
+    "typewriter": [
+      "Process Automation",
+      "Custom SaaS",
+      "WhatsApp AI Agents",
+      "Business Landing Pages"
+    ]
+  },
+  "solutions": {
+    "title": "What we build",
+    "subtitle": "Technical capabilities designed to accelerate your business.",
+    "items": {
+      "landing": { "title": "Landing Pages", "desc": "High-conversion, fast, and optimized pages." },
+      "automation": { "title": "Automations", "desc": "Connecting APIs to save you hours of manual work." },
+      "crm": { "title": "Custom CRM", "desc": "Manage your operations with a tool built for your needs." },
+      "saas": { "title": "SaaS Development", "desc": "End-to-end web application engineering." },
+      "whatsapp": { "title": "WhatsApp Bots", "desc": "Automated flows for customer service and sales." },
+      "ai": { "title": "AI Integration", "desc": "Smart agents powered by LLMs for your specific use cases." }
+    }
+  },
+  "process": {
+    "title": "How we work",
+    "step1": { "title": "Discovery", "desc": "We understand your exact problem." },
+    "step2": { "title": "Proposal", "desc": "Clear scope, architecture, and timeline." },
+    "step3": { "title": "Development", "desc": "Agile building with constant updates." },
+    "step4": { "title": "Delivery", "desc": "Deployment, documentation, and handover." }
+  },
+  "cta": {
+    "title": "Ready to upgrade your stack?",
+    "subtitle": "Let's discuss how software can solve your bottleneck.",
+    "button": "Contact an Engineer"
+  },
+  "agent": {
+    "trigger": "Quick Quote",
+    "header": "AI Assistant",
+    "q1": "Hi! What kind of project are you looking for?",
+    "q2": "Got it. Do you have a specific deadline?",
+    "q3": "Great. Please leave your email and we'll reach out.",
+    "placeholder": "Type your answer...",
+    "send": "Send",
+    "success": "Thanks! We'll be in touch."
+  },
+  "footer": {
+    "rights": "© {{year}} MercSoft. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}

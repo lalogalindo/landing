@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "solutions": "Soluciones",
+    "process": "Proceso",
+    "contact": "Contacto",
+    "quote": "Cotizar"
+  },
+  "hero": {
+    "badge": "Cero humo. Solo resultados.",
+    "title1": "Software a la medida para",
+    "title2": "problemas reales de negocio.",
+    "subtitle": "Construimos soluciones técnicas rápidas, escalables y confiables. Sin magia 360, solo ingeniería sólida.",
+    "cta": "Iniciar Proyecto",
+    "secondary": "Ver Soluciones",
+    "typewriter": [
+      "Automatización de Procesos",
+      "SaaS a la Medida",
+      "Agentes de IA por WhatsApp",
+      "Landing Pages de Negocio"
+    ]
+  },
+  "solutions": {
+    "title": "Qué construimos",
+    "subtitle": "Capacidades técnicas diseñadas para acelerar tu negocio.",
+    "items": {
+      "landing": { "title": "Landing Pages", "desc": "Páginas optimizadas, rápidas y orientadas a la conversión." },
+      "automation": { "title": "Automatizaciones", "desc": "Conexión de APIs para ahorrarte horas de trabajo manual." },
+      "crm": { "title": "CRM a la Medida", "desc": "Gestiona tus operaciones con una herramienta construida para ti." },
+      "saas": { "title": "Desarrollo SaaS", "desc": "Ingeniería de aplicaciones web de inicio a fin." },
+      "whatsapp": { "title": "Bots de WhatsApp", "desc": "Flujos automatizados para atención y ventas." },
+      "ai": { "title": "Integración de IA", "desc": "Agentes inteligentes con LLMs para tus casos de uso." }
+    }
+  },
+  "process": {
+    "title": "Cómo trabajamos",
+    "step1": { "title": "Descubrimiento", "desc": "Entendemos tu problema exacto." },
+    "step2": { "title": "Propuesta", "desc": "Alcance, arquitectura y tiempos claros." },
+    "step3": { "title": "Desarrollo", "desc": "Construcción ágil con actualizaciones." },
+    "step4": { "title": "Entrega", "desc": "Despliegue, documentación y entrega." }
+  },
+  "cta": {
+    "title": "¿Listo para mejorar tu stack?",
+    "subtitle": "Hablemos sobre cómo el software puede resolver tu cuello de botella.",
+    "button": "Contactar a un Ingeniero"
+  },
+  "agent": {
+    "trigger": "Cotización Rápida",
+    "header": "Asistente de IA",
+    "q1": "¡Hola! ¿Qué tipo de proyecto estás buscando?",
+    "q2": "Entendido. ¿Tienes alguna fecha límite específica?",
+    "q3": "Genial. Déjame tu correo y te contactaremos.",
+    "placeholder": "Escribe tu respuesta...",
+    "send": "Enviar",
+    "success": "¡Gracias! Estaremos en contacto."
+  },
+  "footer": {
+    "rights": "© {{year}} MercSoft. Todos los derechos reservados.",
+    "privacy": "Aviso de Privacidad",
+    "terms": "Términos y Condiciones"
+  }
+}
