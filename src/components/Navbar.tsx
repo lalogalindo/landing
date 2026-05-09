@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { trackEvent } from '../analytics/events';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlobe, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import mercsoftLogo from '../../main-logo.png';
 
 export const Navbar = () => {
   const { t, i18n } = useTranslation();
@@ -30,15 +31,16 @@ export const Navbar = () => {
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 px-4 py-4 transition-all duration-300 sm:px-6 lg:px-8">
-      <div className={`mx-auto max-w-7xl rounded-3xl border px-4 transition-all duration-300 sm:px-5 ${isScrolled ? 'border-white/80 bg-white/85 py-3 shadow-[0_18px_60px_rgba(16,42,67,0.12)] backdrop-blur-xl' : 'border-transparent bg-white/35 py-3 backdrop-blur-md'}`}>
+      <div className={`mx-auto max-w-7xl rounded-3xl border px-4 transition-all duration-300 sm:px-5 ${isScrolled ? 'border-white/80 bg-white/90 py-3 shadow-[0_18px_60px_rgba(201,51,67,0.12)] backdrop-blur-xl' : 'border-transparent bg-white/35 py-3 backdrop-blur-md'}`}>
         <div className="flex justify-between items-center">
-          <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer" onClick={() => window.scrollTo(0,0)}>
-            {/* Real Logo or Text */}
-            <span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-brand-900 text-sm font-black text-white shadow-lg shadow-blue-900/20">M</span>
-            <span className="text-2xl font-black tracking-[-0.04em] bg-clip-text text-transparent bg-gradient-to-r from-brand-900 to-brand-accent">
-              MercSoft
-            </span>
-          </div>
+          <button
+            type="button"
+            className="flex flex-shrink-0 cursor-pointer items-center rounded-2xl transition-transform duration-300 hover:scale-[1.02] focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent focus-visible:ring-offset-2"
+            onClick={() => window.scrollTo(0, 0)}
+            aria-label="Ir al inicio de MercSoft"
+          >
+            <img src={mercsoftLogo} alt="MercSoft" className="h-11 w-auto object-contain sm:h-12" />
+          </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
