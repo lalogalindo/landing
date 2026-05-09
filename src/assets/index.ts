@@ -1,0 +1,1 @@
+export { default as mercsoftLogo } from './main-logo.png';

@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import mercsoftLogo from '../../main-logo.png';
+import { mercsoftLogo } from '@/assets';
 
 export const Footer = () => {
   const { t } = useTranslation();
