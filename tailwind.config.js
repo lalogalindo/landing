@@ -18,6 +18,7 @@ export default {
           700: '#334e68',
           800: '#243b53',
           900: '#102a43',
+          950: '#071827',
           accent: '#2563eb', // Modern blue
           hover: '#1d4ed8'
         }

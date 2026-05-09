@@ -1,75 +1,83 @@
-import { useState, useRef } from 'react';
+import { useRef, useState } from 'react';
 import { motion, useSpring, useTransform } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBrain, faChartSimple, faPlugCircleBolt } from '@fortawesome/free-solid-svg-icons';
 
 export const CursorSection = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Magic cursor positioning
-  const x = useSpring(0, { stiffness: 300, damping: 30 });
-  const y = useSpring(0, { stiffness: 300, damping: 30 });
+  const x = useSpring(420, { stiffness: 260, damping: 32 });
+  const y = useSpring(210, { stiffness: 260, damping: 32 });
 
-  const handleMouseMove = (e: React.MouseEvent) => {
+  const handleMouseMove = (event: React.MouseEvent) => {
     if (!containerRef.current) return;
     const rect = containerRef.current.getBoundingClientRect();
-    x.set(e.clientX - rect.left);
-    y.set(e.clientY - rect.top);
+    x.set(event.clientX - rect.left);
+    y.set(event.clientY - rect.top);
   };
 
-  // Tilt effect
-  const tiltX = useTransform(y, [0, 400], [10, -10]);
-  const tiltY = useTransform(x, [0, 800], [-10, 10]);
+  const tiltX = useTransform(y, [0, 440], [6, -6]);
+  const tiltY = useTransform(x, [0, 840], [-7, 7]);
 
   return (
-    <section className="py-24 bg-white relative overflow-hidden" id="interactive">
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        <div 
+    <section className="relative overflow-hidden bg-white py-20 sm:py-24" id="interactive">
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent" />
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div
           ref={containerRef}
-          className="relative w-full h-[400px] rounded-3xl bg-brand-900 overflow-hidden shadow-2xl group cursor-none flex items-center justify-center"
+          className="group relative min-h-[430px] overflow-hidden rounded-[2.5rem] bg-brand-950 shadow-[0_28px_110px_rgba(16,42,67,0.22)]"
           onMouseMove={handleMouseMove}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => {
             setIsHovered(false);
-            x.set(400); // Center roughly
-            y.set(200);
+            x.set(420);
+            y.set(210);
           }}
           style={{ perspective: 1000 }}
         >
+          <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:44px_44px]" />
           <motion.div
-            className="absolute inset-0 flex flex-col items-center justify-center p-8 text-center z-10"
+            className="absolute left-0 top-0 h-72 w-72 rounded-full bg-blue-400 blur-[90px]"
+            style={{
+              x: useTransform(x, (value) => value - 144),
+              y: useTransform(y, (value) => value - 144),
+              opacity: isHovered ? 0.45 : 0.2,
+            }}
+          />
+
+          <motion.div
+            className="relative z-10 grid min-h-[430px] gap-8 p-8 sm:p-10 lg:grid-cols-[0.9fr_1.1fr] lg:p-12"
             style={{ rotateX: isHovered ? tiltX : 0, rotateY: isHovered ? tiltY : 0 }}
-            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            transition={{ type: 'spring', stiffness: 220, damping: 28 }}
           >
-             <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
-               Precision in every detail.
-             </h2>
-             <p className="text-brand-200 text-lg md:text-xl max-w-lg">
-               Software should feel seamless. Move your cursor to experience the interactivity we build into our products.
-             </p>
+            <div className="flex flex-col justify-center">
+              <span className="text-sm font-black uppercase tracking-[0.24em] text-blue-300">Momento visual</span>
+              <h2 className="mt-4 max-w-xl text-4xl font-black tracking-[-0.04em] text-white sm:text-5xl">
+                Sistemas que conectan datos, equipos y decisiones.
+              </h2>
+              <p className="mt-5 max-w-lg text-lg leading-8 text-blue-100/75">
+                Diseñamos flujos donde cada integración trabaja como una capa de inteligencia para tu operación.
+              </p>
+            </div>
+
+            <div className="grid content-center gap-4 sm:grid-cols-3">
+              {[
+                { icon: faPlugCircleBolt, title: 'APIs', text: 'Conexión real' },
+                { icon: faBrain, title: 'IA', text: 'Decisiones útiles' },
+                { icon: faChartSimple, title: 'Métricas', text: 'Control visible' },
+              ].map((item) => (
+                <div key={item.title} className="rounded-3xl border border-white/10 bg-white/[0.09] p-5 text-white backdrop-blur transition-all duration-300 hover:-translate-y-2 hover:bg-white/[0.14]">
+                  <span className="mb-8 flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-accent">
+                    <FontAwesomeIcon icon={item.icon} />
+                  </span>
+                  <h3 className="text-xl font-black">{item.title}</h3>
+                  <p className="mt-2 text-sm font-medium text-blue-100/70">{item.text}</p>
+                </div>
+              ))}
+            </div>
           </motion.div>
-
-          {/* Custom Pointer/Glow Effect */}
-          <motion.div 
-            className="absolute top-0 left-0 w-64 h-64 bg-brand-accent rounded-full opacity-30 blur-[80px] pointer-events-none mix-blend-screen"
-            style={{
-              x: useTransform(x, (v) => v - 128),
-              y: useTransform(y, (v) => v - 128),
-              opacity: isHovered ? 0.6 : 0
-            }}
-          />
-          
-          <motion.div
-            className="absolute top-0 left-0 w-6 h-6 border-2 border-white rounded-full pointer-events-none z-20 mix-blend-difference hidden md:block"
-            style={{
-              x: useTransform(x, (v) => v - 12),
-              y: useTransform(y, (v) => v - 12),
-              opacity: isHovered ? 1 : 0,
-              scale: isHovered ? 1 : 0.5
-            }}
-          />
         </div>
-
       </div>
     </section>
   );

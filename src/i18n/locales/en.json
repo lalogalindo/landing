@@ -6,42 +6,81 @@
     "quote": "Get a Quote"
   },
   "hero": {
-    "badge": "No fluff. Just results.",
-    "title1": "Custom software for",
-    "title2": "real business problems.",
-    "subtitle": "We build fast, scalable, and reliable technical solutions. No 360 magic, just solid engineering.",
-    "cta": "Start a Project",
-    "secondary": "View Solutions",
+    "badge": "Software studio built for faster growth.",
+    "title1": "Custom software that moves",
+    "title2": "your operation.",
+    "subtitle": "We automate processes, launch SaaS, and connect AI, WhatsApp, and data with clear engineering.",
+    "cta": "Book a diagnosis",
+    "secondary": "View capabilities",
     "typewriter": [
-      "Process Automation",
+      "Process automation",
       "Custom SaaS",
-      "WhatsApp AI Agents",
-      "Business Landing Pages"
+      "WhatsApp bots with AI",
+      "Intelligent integrations"
     ]
   },
   "solutions": {
     "title": "What we build",
-    "subtitle": "Technical capabilities designed to accelerate your business.",
+    "subtitle": "From internal systems to AI agents: we build technical assets that reduce friction and increase speed.",
     "items": {
-      "landing": { "title": "Landing Pages", "desc": "High-conversion, fast, and optimized pages." },
-      "automation": { "title": "Automations", "desc": "Connecting APIs to save you hours of manual work." },
-      "crm": { "title": "Custom CRM", "desc": "Manage your operations with a tool built for your needs." },
-      "saas": { "title": "SaaS Development", "desc": "End-to-end web application engineering." },
-      "whatsapp": { "title": "WhatsApp Bots", "desc": "Automated flows for customer service and sales." },
-      "ai": { "title": "AI Integration", "desc": "Smart agents powered by LLMs for your specific use cases." }
-    }
+      "landing": {
+        "title": "Landing Pages",
+        "desc": "Fast pages focused on turning traffic into conversations."
+      },
+      "automation": {
+        "title": "Automations",
+        "desc": "APIs, tasks, and flows that remove repetitive manual work."
+      },
+      "crm": {
+        "title": "Custom CRM",
+        "desc": "Control sales, customers, and operations with your own platform."
+      },
+      "saas": {
+        "title": "SaaS Development",
+        "desc": "Robust web products to sell, operate, and scale in the cloud."
+      },
+      "whatsapp": {
+        "title": "WhatsApp Bots",
+        "desc": "Automated service, follow-up, and sales in the channel customers already use."
+      },
+      "ai": {
+        "title": "AI Integration",
+        "desc": "Applied AI agents to classify, reply, summarize, and make better decisions."
+      }
+    },
+    "eyebrow": "Services",
+    "cardCta": "Designed to scale"
   },
   "process": {
     "title": "How we work",
-    "step1": { "title": "Discovery", "desc": "We understand your exact problem." },
-    "step2": { "title": "Proposal", "desc": "Clear scope, architecture, and timeline." },
-    "step3": { "title": "Development", "desc": "Agile building with constant updates." },
-    "step4": { "title": "Delivery", "desc": "Deployment, documentation, and handover." }
+    "step1": {
+      "title": "Discovery",
+      "desc": "We understand your exact problem."
+    },
+    "step2": {
+      "title": "Proposal",
+      "desc": "Clear scope, architecture, and timeline."
+    },
+    "step3": {
+      "title": "Development",
+      "desc": "Agile building with constant updates."
+    },
+    "step4": {
+      "title": "Delivery",
+      "desc": "Deployment, documentation, and handover."
+    },
+    "subtitle": "From idea to working product with clarity, visible deliverables, and no-noise technical decisions."
   },
   "cta": {
-    "title": "Ready to upgrade your stack?",
-    "subtitle": "Let's discuss how software can solve your bottleneck.",
-    "button": "Contact an Engineer"
+    "title": "Let’s turn your bottleneck into software that sells, operates, and scales.",
+    "subtitle": "Tell us where your business is slowing down. We will return a clear and actionable technical path.",
+    "button": "Talk to MercSoft",
+    "eyebrow": "Strategic sprint",
+    "highlights": {
+      "speed": "Direct diagnosis",
+      "quality": "Clean architecture",
+      "ai": "AI where it adds value"
+    }
   },
   "agent": {
     "trigger": "Quick Quote",
