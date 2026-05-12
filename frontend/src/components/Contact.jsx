@@ -7,12 +7,12 @@ import { useT } from "../i18n";
 import { SectionHeader } from "./Services";
 import { Phone, EnvelopeSimple, Clock, PaperPlaneTilt, CheckCircle } from "@phosphor-icons/react";
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const API = `${import.meta.env.VITE_BACKEND_URL}/api`;
 const RECAPTCHA_SITE_KEY =
-  process.env.REACT_APP_RECAPTCHA_SITE_KEY ||
+  import.meta.env.VITE_RECAPTCHA_SITE_KEY ||
   "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"; // Google test key
-const PHONE = process.env.REACT_APP_CONTACT_PHONE || "2221401900";
-const EMAIL = process.env.REACT_APP_CONTACT_EMAIL || "lalogalindo@gmail.com";
+const PHONE = import.meta.env.VITE_CONTACT_PHONE || "2221401900";
+const EMAIL = import.meta.env.VITE_CONTACT_EMAIL || "lalogalindo@gmail.com";
 
 const formatPhone = (p) => {
   const d = (p || "").replace(/\D/g, "");

@@ -2,8 +2,8 @@ import React from "react";
 import Logo from "./Logo";
 import { useT } from "../i18n";
 
-const PHONE = process.env.REACT_APP_CONTACT_PHONE || "2221401900";
-const EMAIL = process.env.REACT_APP_CONTACT_EMAIL || "lalogalindo@gmail.com";
+const PHONE = import.meta.env.VITE_CONTACT_PHONE || "2221401900";
+const EMAIL = import.meta.env.VITE_CONTACT_EMAIL || "lalogalindo@gmail.com";
 
 const formatPhone = (p) => {
   const d = (p || "").replace(/\D/g, "");

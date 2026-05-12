@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useMemo, useState, useCallback } from "react";
 import { dict, SUPPORTED_LANGS } from "./translations";
 
-const DEFAULT_LANG = process.env.REACT_APP_DEFAULT_LANG || "en";
+const DEFAULT_LANG = import.meta.env.VITE_DEFAULT_LANG || "en";
 
 const I18nContext = createContext({
   lang: DEFAULT_LANG,

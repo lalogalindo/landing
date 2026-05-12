@@ -1,11 +1,12 @@
 import React from "react";
-import Nav from "../components/Nav";
-import Hero from "../components/Hero";
-import Services from "../components/Services";
-import Process from "../components/Process";
-import Privacy from "../components/Privacy";
-import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import Nav from "../components/Nav.jsx";
+import Hero from "../components/Hero.jsx";
+import Services from "../components/Services.jsx";
+import Process from "../components/Process.jsx";
+import Privacy from "../components/Privacy.jsx";
+import Contact from "../components/Contact.jsx";
+import Footer from "../components/Footer.jsx";
+import Chatbot from "../components/Chatbot.jsx";
 
 export default function Landing() {
   return (
@@ -19,6 +20,7 @@ export default function Landing() {
         <Contact />
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }

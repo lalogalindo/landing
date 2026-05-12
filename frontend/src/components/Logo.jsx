@@ -1,32 +1,16 @@
 import React from "react";
-
-const LOGO_URL =
-  "https://customer-assets.emergentagent.com/job_2caf7472-358e-4951-9ad9-64b890599e8e/artifacts/yzfprxpq_bnm-02.jpg";
+import LOGO from "../assets/images/main-logo.png";
 
 export default function Logo({ size = 36, withWordmark = true, className = "" }) {
   return (
-    <div className={`flex items-center gap-3 ${className}`} data-testid="brand-logo">
+    <div className={`flex items-center ${className}`} data-testid="brand-logo">
       <img
-        src={LOGO_URL}
+        src={LOGO}
         alt="MercSoft logo"
-        width={size}
-        height={size}
-        style={{ width: size, height: size, objectFit: "contain" }}
+        className="h-12 md:h-[90px] w-auto"
+        style={{ objectFit: "contain" }}
         draggable={false}
       />
-      {withWordmark && (
-        <span
-          className="heading"
-          style={{
-            fontWeight: 800,
-            fontSize: 18,
-            letterSpacing: "-0.02em",
-            color: "var(--text-1)",
-          }}
-        >
-          MercSoft
-        </span>
-      )}
     </div>
   );
 }

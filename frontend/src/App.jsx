@@ -1,8 +1,8 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
-import { I18nProvider } from "@/i18n";
-import Landing from "@/pages/Landing";
+import { I18nProvider } from "@/i18n/index.jsx";
+import Landing from "@/pages/Landing.jsx";
 
 function App() {
   return (
