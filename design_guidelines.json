@@ -78,11 +78,6 @@
   "media": {
     "images": [
       {
-        "category": "logo",
-        "url": "https://customer-assets.emergentagent.com/job_2caf7472-358e-4951-9ad9-64b890599e8e/artifacts/yzfprxpq_bnm-02.jpg",
-        "description": "MercSoft Multi-color Swirl Logo"
-      },
-      {
         "category": "hero_background",
         "url": "https://images.unsplash.com/photo-1771875802948-0d0f3424fe6d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHwyfHxhYnN0cmFjdCUyMGRhcmslMjBuZW9uJTIwdGVjaHxlbnwwfHx8fDE3Nzc5NjAxNDd8MA&ixlib=rb-4.1.0&q=85",
         "description": "Abstract streaks of colorful neon lights against dark background. Use with heavy bg-black/60 overlay."
