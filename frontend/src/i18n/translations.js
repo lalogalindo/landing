@@ -5,6 +5,7 @@
 export const dict = {
   en: {
     nav: {
+      about: "About Us",
       services: "Services",
       process: "Process",
       privacy: "Privacy",
@@ -181,6 +182,82 @@ export const dict = {
         error_generic: "Something went wrong. Please try again.",
       },
     },
+    about: {
+      hero_eyebrow: "About MercSoft",
+      hero_title_a: "Engineered for clarity,",
+      hero_title_b: "built for impact.",
+      hero_lede:
+        "MercSoft is an AI-powered software studio partnering with ambitious companies to build scalable digital products, high-converting platforms, and intelligent workflows.",
+      intro_label: "Who We Are",
+      intro_title: "A modern software partner",
+      intro_text:
+        "MercSoft bridges technical excellence with strategic business execution. Rather than applying rigid templates, we analyze every system from first principles to deliver maintainable, performant, and tailor-made software.",
+      services_label: "What We Do",
+      services_title: "Full-cycle digital engineering",
+      services_lede:
+        "From initial architecture to continuous production deployment, our capabilities cover modern web development, intelligent automation, and bespoke cloud infrastructure.",
+      approach_label: "Our Approach",
+      approach_title: "Principles behind our craft",
+      principles: [
+        {
+          title: "Problem-First Engineering",
+          desc: "Every line of code starts with understanding your business bottleneck. We build purposeful software, eliminating unnecessary bloat.",
+        },
+        {
+          title: "Modern AI & Resilient Stack",
+          desc: "We leverage leading-edge AI models, robust backend APIs, and reactive interfaces to create systems built to scale.",
+        },
+        {
+          title: "Direct Founder Collaboration",
+          desc: "Work directly with senior engineers and architects from kickoff through launch, ensuring high velocity and zero friction.",
+        },
+      ],
+      team_label: "Our Team",
+      team_title: "Leadership & craft",
+      team_lede:
+        "Meet the team leading engineering, product strategy, and technical architecture at MercSoft.",
+      view_card: "View digital card",
+      cta_label: "Ready to collaborate?",
+      cta_title: "Let's build your next digital product together.",
+      cta_lede:
+        "Whether you need custom software, an AI workflow, or an architectural audit, we're ready to help.",
+      cta_btn: "Start a project",
+    },
+    card: {
+      badge: "Digital Business Card",
+      subtitle: "MercSoft Team Member",
+      connect: "Get in touch",
+      back_to_about: "Back to About Us",
+      back_to_home: "Back to Home",
+      placeholder_notice:
+        "Full digital card features (vCard, QR code, NFC) coming soon.",
+      tap_flip: "Tap to flip",
+      flip_label: "Business card. Press to flip it.",
+      descriptor: "Software & Digital Solutions",
+      save: "Save contact",
+      whatsapp: "WhatsApp",
+      call: "Call",
+      email: "Email",
+      website: "Website",
+      linkedin: "LinkedIn",
+      share: "Share",
+      qr_show: "Show QR code",
+      qr_hide: "Hide QR code",
+      qr_alt: "QR code for this business card",
+      qr_download: "Download QR (PNG)",
+      copied: "Link copied",
+      saved: "Contact file downloaded",
+      copy_error: "Could not copy the link",
+      powered: "Powered by",
+      lang_label: "Language",
+      not_found: "Business card not found.",
+    },
+    not_found: {
+      title: "404",
+      subtitle: "Page not found",
+      desc: "The page you are looking for doesn't exist or has been moved.",
+      back_home: "Return to Home",
+    },
     footer: {
       tagline: "We create solutions to our customers' problems.",
       copyright: "© 2025 MercSoft. All rights reserved.",
@@ -191,6 +268,7 @@ export const dict = {
   // Spanish — ready for future toggling.
   es: {
     nav: {
+      about: "Nosotros",
       services: "Servicios",
       process: "Proceso",
       privacy: "Privacidad",
@@ -366,6 +444,82 @@ export const dict = {
           "Nuestro servicio de correo está saturado. Intenta más tarde o llámanos por teléfono.",
         error_generic: "Algo salió mal. Inténtalo de nuevo.",
       },
+    },
+    about: {
+      hero_eyebrow: "Sobre MercSoft",
+      hero_title_a: "Diseñado para claridad,",
+      hero_title_b: "construido para impactar.",
+      hero_lede:
+        "MercSoft es un estudio de software potenciado con IA que colabora con empresas ambiciosas para crear productos digitales escalables, plataformas de alto impacto y flujos inteligentes.",
+      intro_label: "Quiénes Somos",
+      intro_title: "Un socio moderno de software",
+      intro_text:
+        "MercSoft une la excelencia técnica con la visión estratégica de negocio. En lugar de aplicar plantillas rígidas, abordamos cada sistema desde sus fundamentos para entregar software mantenible, veloz y hecho a la medida.",
+      services_label: "Qué Hacemos",
+      services_title: "Ingeniería digital de ciclo completo",
+      services_lede:
+        "Desde la arquitectura inicial hasta el despliegue continuo en producción, abarcamos desarrollo web moderno, automatizaciones inteligentes e infraestructura en la nube.",
+      approach_label: "Nuestro Enfoque",
+      approach_title: "Principios detrás de nuestro trabajo",
+      principles: [
+        {
+          title: "Ingeniería centrada en el problema",
+          desc: "Cada línea de código responde a una necesidad real del negocio. Construimos software con propósito, sin capas innecesarias.",
+        },
+        {
+          title: "IA moderna y stack resiliente",
+          desc: "Aprovechamos modelos de IA de vanguardia, APIs robustas e interfaces reactivas para crear sistemas diseñados para escalar.",
+        },
+        {
+          title: "Colaboración directa",
+          desc: "Trabaja directamente con ingenieros y arquitectos senior desde el inicio hasta el lanzamiento, garantizando agilidad y transparencia.",
+        },
+      ],
+      team_label: "Nuestro Equipo",
+      team_title: "Liderazgo y experiencia",
+      team_lede:
+        "Conoce al equipo que lidera la ingeniería, estrategia de producto y arquitectura técnica en MercSoft.",
+      view_card: "Ver tarjeta digital",
+      cta_label: "¿Listo para colaborar?",
+      cta_title: "Construyamos tu próximo producto digital.",
+      cta_lede:
+        "Ya sea que necesites software a la medida, automatizaciones con IA o una auditoría técnica, estamos listos para comenzar.",
+      cta_btn: "Iniciar proyecto",
+    },
+    card: {
+      badge: "Tarjeta Digital de Presentación",
+      subtitle: "Equipo MercSoft",
+      connect: "Contactar",
+      back_to_about: "Volver a Nosotros",
+      back_to_home: "Volver al Inicio",
+      placeholder_notice:
+        "Funcionalidades completas de tarjeta digital (vCard, código QR, NFC) disponibles próximamente.",
+      tap_flip: "Toca para girar",
+      flip_label: "Tarjeta de presentación. Presiona para girarla.",
+      descriptor: "Software y Soluciones Digitales",
+      save: "Guardar contacto",
+      whatsapp: "WhatsApp",
+      call: "Llamar",
+      email: "Correo",
+      website: "Sitio web",
+      linkedin: "LinkedIn",
+      share: "Compartir",
+      qr_show: "Mostrar código QR",
+      qr_hide: "Ocultar código QR",
+      qr_alt: "Código QR de esta tarjeta de presentación",
+      qr_download: "Descargar QR (PNG)",
+      copied: "Enlace copiado",
+      saved: "Archivo de contacto descargado",
+      copy_error: "No se pudo copiar el enlace",
+      powered: "Desarrollado por",
+      lang_label: "Idioma",
+      not_found: "Tarjeta no encontrada.",
+    },
+    not_found: {
+      title: "404",
+      subtitle: "Página no encontrada",
+      desc: "La página que buscas no existe o ha sido movida.",
+      back_home: "Volver al Inicio",
     },
     footer: {
       tagline: "Creamos soluciones a los problemas de nuestros clientes.",
